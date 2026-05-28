@@ -1,0 +1,35 @@
+:root {
+  --table_bg: #ddd;
+  --table_th: #444;
+  --table_hl: #ccc;
+}
+
+/* dark mode */
+:root:has(#theme-toggle:checked) {
+  --table_bg: #222;
+  --table_th: #444;
+  --table_hl: #333;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table th, table td {
+  padding: 5px;
+  border: 1px solid var(--table_th);
+}
+
+table th {
+  color: #eee;
+  background-color: var(--table_th);
+}
+
+table tr:nth-child(even){
+  background-color: var(--table_bg);
+}
+
+table tr:hover {
+  background-color: var(--table_hl);
+}

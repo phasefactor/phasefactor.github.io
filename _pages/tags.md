@@ -1,0 +1,36 @@
+---
+title: "Posts by Tag"
+permalink: "/tags.html"
+description: "Posts sorted by tags."
+---
+
+{%- capture site_tags -%}
+  {%- for tag in site.tags -%}
+    {{ tag | first }}{%- unless forloop.last -%},{%- endunless -%}
+  {%- endfor -%}
+{%- endcapture -%} 
+
+{%- assign sorted_tag_list = site_tags | split:',' | sort_natural -%}
+
+{%- for tag in sorted_tag_list -%}
+  {%- assign published_posts = site.tags[tag] | where: "draft", "false" -%}
+  {%- assign num_posts = published_posts | size -%}
+  
+  {%- if num_posts != 0 -%}
+    <details data-tag="{{ tag }}">
+      <summary><h2 id="{{ tag }}" style="display:inline;">{{ tag }} ({{ num_posts }})</h2></summary>
+    <ul>
+      {% for post in published_posts %}
+        {% if post.draft != true %}
+        <li>{{ post.date  | date: "%Y-%m-%d" }} - <a markdown="1" href="{{ post.url }}">{{ post.title }}</a></li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+    </details>
+  {% endif %}
+{% endfor %}
+
+
+<style>summary::-webkit-details-marker {padding-bottom: 4px;}</style>
+
+<script>if (window.location.hash){document.querySelector("details[data-tag='"+decodeURIComponent(window.location.hash.substring(1))+"']").open=true;}</script>

@@ -1,0 +1,16 @@
+ul#markdown-toc {
+  margin: 3em 0 0 0;
+}
+
+ul#markdown-toc:before {
+  content: "Table of Contents";
+  font-weight: bold;
+ /* padding: 2rem 0 1rem; */
+  margin: -40px;   /* TODO - magic number */
+  font-size: 1.6rem;
+/* border-bottom: 1px solid #f1f1f1; */
+}
+
+ul#markdown-toc > li:first-child {
+  padding-top: 1em;
+}

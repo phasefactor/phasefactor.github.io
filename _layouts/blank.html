@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+    
+<head>
+{%- if page.title and page.title != "" -%}
+<title>{{ page.title }} | {{ site.title }}</title>
+{%- else -%}
+<title>{{ site.title }}</title>
+{%- endif -%}
+  
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+{%- if page.description and page.description != "" -%}
+<meta name="description" content="{{ page.description }}">
+{%- else -%}
+<meta name="description" content="{{ site.description }}">
+{%- endif -%}
+
+</head>
+
+<body>
+    {{ content }}
+</body>
+
+</html>

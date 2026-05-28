@@ -1,0 +1,36 @@
+:root {
+  color-scheme: light dark;
+
+  --bg: #eee;
+  --fg: #222;
+  --border: #ddd;
+}
+
+:root:has(#theme-toggle:checked) {
+  --bg: #111;
+  --fg: #eee;
+  --border: #333;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color:      var(--fg);
+  
+  margin: 0;
+  font: 16px system-ui;
+  line-height: 1.5;
+}
+
+main {
+  max-width: 75ch;
+  margin: auto;
+  padding: 2rem 1.5rem;
+  min-height: 100vh;
+}
+
+
+

@@ -1,0 +1,55 @@
+title: "phasefactor.dev"
+
+email: admin@phasefactor.dev
+
+description: >- 
+ A collection of things that might be useful.
+
+url: "https://phasefactor.dev" 
+
+baseurl: "" 
+
+twitter_username: phasefactor
+github_username:  phasefactor
+
+markdown: kramdown
+  
+kramdown:
+  toc_levels: [2, 3, 4]
+  syntax_highlighter_opts:
+    disable : true
+
+theme: null
+
+include: [_pages]
+
+sass:
+  style: compressed
+
+collections:
+  notes:
+    output: true
+    permalink: /notes/:year-:month-:day-:slug/
+
+permalink: /posts/:year-:month-:day-:slug/
+
+plugins:
+  - jekyll-redirect-from
+  
+defaults:
+  -
+    scope:
+      path:     ""
+    values:
+      layout:   "default"
+      author:   "admin@phasefactor.dev"
+  -
+    scope:
+      path: _posts
+    values:
+      layout: post
+  -
+    scope:
+      path: _notes
+    values:
+      layout: post

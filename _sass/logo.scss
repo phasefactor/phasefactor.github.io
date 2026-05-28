@@ -1,0 +1,18 @@
+nav > a {
+  background:  linear-gradient(25deg, #ff4d4d, #4d79ff);
+  
+  -webkit-background-clip: text;
+  background-clip:         text;
+  
+  color: transparent;
+  
+  font-size:1.6em;
+  font-family: serif;
+  
+  text-decoration: none;
+}
+
+/* disable the color change on hover */
+nav > a:hover, nav > a:visited {
+  color: transparent;
+}

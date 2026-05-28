@@ -1,0 +1,60 @@
+---
+title:  "Notes to my Future Self"
+permalink: "/posts.html"
+---
+
+List of all posts in chronological order.  For a list by topic <a href="\tags.html">check this page</a>.
+
+{% assign publishedPosts = site.posts | where: "draft": "false"  %}
+
+{% assign postsByYear = publishedPosts | group_by_exp:"post", "post.date | date: '%Y'" %}
+  {% for year in postsByYear %}
+    <h1>{{ year.name }}</h1>
+    {% assign postsByMonth = year.items | group_by_exp:"post", "post.date | date: '%B'" %}
+
+    {% for month in postsByMonth %}
+      <h2>{{ month.name }}</h2>
+      <ul>
+        {% for post in month.items %}
+          <li>
+            {{ post.date | date: '%Y-%m-%d' }} - <a markdown="1" href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape_once }}</a><br/>
+            {{ post.excerpt }}
+          </li>
+        {% endfor %}
+      </ul>
+
+  {% endfor %}
+{% endfor %}
+
+
+{% raw %}
+<style>
+  sup[role='doc-noteref'], 
+  div[role='doc-endnotes'] { 
+    display:none; 
+  }
+
+  li > p {
+    margin-inline-start: 40px;
+    margin-block-start:  0.3em;
+    margin-block-end:    1em;
+  }
+
+  article ul {
+    margin-inline-start: 40px;
+  }
+
+  article h1 {
+    margin-block-start:  1em !important;
+    margin-block-start:  1.5em !important;
+  }
+  article h2 {
+    margin-block-start:  1em !important;
+    margin-inline-start: 40px !important;
+  }
+
+  article h1 + h2 {
+    margin-block-start:  0.5em !important;
+  }
+</style>
+{% endraw %}

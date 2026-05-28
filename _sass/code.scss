@@ -1,0 +1,49 @@
+:root {
+  --code_bg:    #555;
+  --code_fg:    #eee;
+}
+
+:root:has(#theme-toggle:checked) {
+  --code_bg:    #333;
+  --code_fg:    #eee;
+}
+
+/* inline code blocks */
+code {
+  background-color: var(--code_bg);
+  color:            var(--code_fg);
+  
+  font-family: 'Courier New', monospace;
+  font-size:   1.05em;
+  
+  padding: 1px 4px;
+}
+
+/* stand alone code blocks are code elements wrapped in a pre */
+pre > code {
+  padding: 0px;  /* fixes first line being slightly indented */
+}
+
+pre {
+  background-color: var(--code_bg);
+  color:            var(--code_fg);
+  
+  font-family: 'Courier New', monospace;
+  
+  padding: 1rem;
+  border-radius: 4px;
+
+  /* jankily center the code so we can stretch it dynamically */
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+
+  /* let the code blocks stretch slightly before scrolling */
+  width: fit-content;
+  min-width: 75ch;
+  max-width: 75vw;
+
+  overflow-x: auto;
+}
+
+

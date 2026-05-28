@@ -1,0 +1,35 @@
+.hamburger {
+  --bar: 3px;
+  --gap: .3rem;
+  --offset: calc(var(--bar) + var(--gap));
+  
+  display: grid;
+  gap: var(--gap);
+  width: 1.4rem;
+  list-style: none;
+  
+  cursor: pointer;
+}
+
+.hamburger span {
+  height: var(--bar);
+  background: currentColor;  /* current theme's text color */
+  
+  border-radius: 999px;
+  
+  transition: transform .2s ease;
+}
+
+/* on summary open: toggle middle bar visibility and rotate outer bars */
+.menu[open] .hamburger span:nth-child(1) {
+  transform: translateY(var(--offset)) rotate(45deg);
+}
+
+.menu[open] .hamburger span:nth-child(2) {
+  opacity: 0;
+  transition: none;
+}
+
+.menu[open] .hamburger span:nth-child(3) {
+  transform: translateY(calc(-1 * var(--offset))) rotate(-45deg);
+}

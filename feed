@@ -1,0 +1,24 @@
+---
+layout: null
+permalink: feed.rss
+---
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+{% if site.title and site.title != '' %}<title>{{ site.title }}</title>{% else %}<title>No title set in _config.yml!</title>{% endif %}
+{% if site.description and site.description != '' %}<description>{{ site.description }}</description>{% else %}<description>No description set in _config.yml!</description>{% endif %}
+{% if site.url and site.url != '' %}<link>{{ site.url }}</link>{% else %}<link>No url set in _config.yml!</link>{% endif %}
+{% if site.copyright and site.copyright != '' %}<copyright>{{ site.copyright }}</copyright>{% endif %}
+<lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
+<ttl>60</ttl>
+{% for post in site.posts %}
+<item>
+{% if post.title and post.title != '' %}<title>{{ post.title  | escape }}</title>{% else %}<title>No title set for this post!</title>{% endif %}
+{% if post.excerpt and post.excerpt != '' %}<description>{{ post.excerpt }}</description>{% else %}<description>{{ post.content }}</description>{% endif %}
+{% if site.url and site.url != '' %}<link>{{site.url}}{{page.url}}</link>{% else %}<link>No site url set in _config.yml!</link>{% endif %}
+{% if post.id and post.id != '' %}<guid isPermaLink="false">{{ post.id }}</guid>{% endif %}
+{% if post.date and post.date != '' %}<pubDate>{{ post.date | date_to_rfc822 }}</pubDate>{% endif %}
+</item>
+{% endfor %}
+</channel>
+</rss>

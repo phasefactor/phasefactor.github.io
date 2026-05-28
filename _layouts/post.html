@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+{% if page.title -%}
+  <title>{{ page.title }} - {{ site.title }}</title>
+{%- else -%}
+  <title>{{ site.title }}</title>
+{%- endif %}
+  
+{% if page.description -%}
+  <meta name="description" content="{{ page.description }}">
+{%- else -%}
+  <meta name="description" content="{{ site.description }}">
+{%- endif %}
+  
+  <link rel="stylesheet" type="text/css" href="{{ "/assets/css/normalize.css" | relative_url }}">
+  <link rel="stylesheet" type="text/css" href="{{ "/assets/css/styles.css" | relative_url }}">
+
+  {%- if page.math -%}
+  <script>
+  window.MathJax = {
+    tex: {
+      inlineMath:  [['$',  '$'],  ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+  </script>
+  
+  <script
+    defer
+    id="MathJax-script"
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+  {%- endif -%}
+</head>
+  
+<body>
+  {% include header.html %}
+  
+  
+  <main>
+        <h1>{{ page.title | escape }}</h1>
+      
+        <p style="margin-top: -5px;font-size:75%;">
+          {% if page.date -%}
+          Posted: {{ page.date | date: "%Y-%m-%d" -}}
+          {% endif %}
+          {%- if page.modified -%}
+            , Updated: {{- page.modified -}}
+          {%- endif -%}
+          
+          <br/>
+          
+          Tags: {% assign num_tags = page.tags | size -%}
+          {%- if num_tags > 0 -%}
+            {%- for tag in page.tags -%}
+              <a href="/tags.html#{{ tag }}">{{- tag -}}</a>{%- if forloop.last != true %}, {% endif -%}
+            {%- endfor -%}
+          {%- else -%}None{%- endif -%}
+        </p>
+      
+      
+      {{ content }}
+  </main>
+  
+  <footer>
+    {% include footer.html %}
+  </footer>
+</body>
+</html>

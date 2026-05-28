@@ -1,0 +1,39 @@
+.theme-toggle {
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 1rem;
+}
+
+.theme-toggle input {
+position: absolute;
+opacity: 0;
+pointer-events: none;
+}
+
+.switch {
+width: 2.75rem;
+height: 1.5rem;
+padding: 2px;
+display: flex;
+align-items: center;
+background: #888;
+border-radius: 999px;
+transition: background .2s ease;
+}
+
+.thumb {
+width: 1.1rem;
+height: 1.1rem;
+background: white;
+border-radius: 50%;
+transition: transform .2s ease;
+}
+
+.theme-toggle input:checked + .switch {
+background: #4a8cff;
+}
+
+.theme-toggle input:checked + .switch .thumb {
+transform: translateX(1.25rem);
+}

@@ -1,0 +1,37 @@
+<nav>
+  <a href="/"><var>e</var><sup><var>i&straightphi;</var></sup></a>
+  
+  <details class="menu">
+    <summary class="hamburger" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </summary>
+  
+    <div class="menu-body">
+      <label class="theme-toggle">
+        <input type="checkbox" id="theme-toggle" checked />
+        Dark Mode
+        <span class="switch">
+          <span class="thumb"></span>
+        </span>
+      </label>
+      
+      <hr class="menu-divider" />
+
+      <a href="/posts.html">Posts</a>
+      <a href="/notes.html">Notes to Myself</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </details>
+</nav>
+
+<script>
+  (function (){
+    let toggle = document.querySelector("#theme-toggle");
+
+    if localStorage.theme { toggle.checked = localStorage.theme === "dark";}
+  
+    toggle.addEventListener("change", () => { localStorage.theme = toggle.checked ? "dark" : "light"; });
+  }());
+</script>

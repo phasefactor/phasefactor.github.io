@@ -1,0 +1,39 @@
+.footnotes ol:before {
+  content: "References";
+  font-weight: bold;
+ /* padding: 2rem 0 1rem; */
+  margin: -40px;   /* TODO - magic number */
+  font-size: 1.6rem;
+ /* border-bottom: 1px solid #f1f1f1; */
+}
+
+.footnotes ol {
+  margin: 3em 0 0 0;
+}
+
+.footnotes li {
+  position: relative;
+  word-break: break-word;  /* Force breaks in the back-reference list. */
+  opacity: 0.6;
+}
+
+.footnotes li:target {
+  opacity: 1;
+}
+
+.footnotes li:target::before {
+  position: absolute;
+  top: -5px;
+  right: -8px;
+  bottom: -8px;
+  left: -45px;
+  pointer-events: none;
+  content: "";
+  border: 2px solid var(--fg);
+  border-radius: 5px;
+}
+
+/* Keep the back arrow and ID number together across line breaks. */
+a.reversefootnote {
+  white-space: nowrap;
+}
