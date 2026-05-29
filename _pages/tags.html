@@ -4,7 +4,7 @@ description: "Posts sorted by tags."
 permalink:   /tags.html
 ---
 {% assign all_items = site.posts | concat: site.notes %}
-<!-- {{ all_items }} -->
+
 {% assign tags = "" | split: "" %}
 
 {% for item in all_items %}
@@ -14,7 +14,7 @@ permalink:   /tags.html
 {% assign tags = tags | uniq | sort_natural %}
 <!-- {{ tags }} -->
 {%- for tag in tags -%}
-  {%- assign published_posts = all_items[tag] | where_exp: "item", "item.tags contains tag" -%}
+  {%- assign published_posts = all_items | where_exp: "item", "item.tags contains tag" -%}
   {%- assign published_posts = published_posts | where: "draft", "false" -%}
 
   {%- assign num_posts = published_posts.size -%}
