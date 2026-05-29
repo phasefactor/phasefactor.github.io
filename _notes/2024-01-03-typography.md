@@ -1,7 +1,7 @@
 ---
 title:       "Typography Notes"
 description: "A collection of the research findings about typography and readability."
-tags:        CSS Typography
+tags:        [CSS, Typography]
 redirect_from:
   - /2024/01/03/typography.html
 ---

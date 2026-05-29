@@ -1,7 +1,7 @@
 ---
 title:       "MacOS's Background Noise Feature"
 description: "How to configure background noises and make a Shortcut or script to toggle it."
-tags:        MacOS
+tags:        [MacOS]
 redirect_from:
  - /2024/05/29/background-noise.html
 ---

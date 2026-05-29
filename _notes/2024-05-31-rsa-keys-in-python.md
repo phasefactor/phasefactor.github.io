@@ -1,7 +1,7 @@
 ---
 title:       "Generating RSA Keys in Python"
 description: ""
-tags:        Python RSA
+tags:        [Python, RSA]
 math:        true
 redirect_from:
  - /2024/05/31/rsa-keys-in-python.html

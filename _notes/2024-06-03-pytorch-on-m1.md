@@ -1,7 +1,7 @@
 ---
 title:       "Accelerating PyTorch on Apple Silicon"
 description: ""
-tags:        Python Pytorch
+tags:        [Python, Pytorch]
 redirect_from:
  - /2024/06/03/pytorch-on-m1.html
 ---

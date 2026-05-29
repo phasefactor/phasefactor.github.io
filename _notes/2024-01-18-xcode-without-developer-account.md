@@ -1,7 +1,7 @@
 ---
 title:       "Using Xcode Without an Apple Developer Account"
 description: ""
-tags:        Xcode
+tags:        [Xcode]
 excerpt_separator: <!--more-->
 redirect_from:
   - /2024/01/18/xcode-without-developer-account.html

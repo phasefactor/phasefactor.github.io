@@ -1,7 +1,7 @@
 ---
 title:       "GL.iNet Slate AX as Secure Home Router"
 description: "Setting up VPN and DNS security for home use."
-tags:        GL.iNet Security
+tags:        [GL.iNet, Security]
 redirect_from: 
  - /2024/01/15/glinet-dns-vpn.html
 ---

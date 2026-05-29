@@ -2,11 +2,13 @@
 title: "Home"
 ---
 
+{% assign all_items = site.posts | concat: site.notes | sort: "date" | reverse %}
+
 {{ site.description }}
 
 [Search by tags](\tags.html) or use the chronological list:
 
-{%- for post in site.posts -%}
+{%- for post in all_items -%}
 {%- unless post.draft == true %}
 
 ## [{{ post.title }}]({{post.url | prepend: site.baseurl }})

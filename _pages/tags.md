@@ -3,12 +3,15 @@ title: "Posts by Tag"
 permalink: "/tags.html"
 description: "Posts sorted by tags."
 ---
+{% assign all_items = site.posts | concat: site.notes %}
 
-{%- capture site_tags -%}
-  {%- for tag in site.tags -%}
-    {{ tag | first }}{%- unless forloop.last -%},{%- endunless -%}
-  {%- endfor -%}
-{%- endcapture -%} 
+{% assign tags = "" | split: "" %}
+
+{% for item in all_items %}
+  {% assign tags = tags | concat: item.tags %}
+{% endfor %}
+
+{% assign tags = tags | uniq | sort_natural %}
 
 {%- assign sorted_tag_list = site_tags | split:',' | sort_natural -%}
 

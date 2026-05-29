@@ -1,7 +1,7 @@
 ---
 title:       "David Deutsch's Lectures on Quantum Computing"
 description: "A good introduction to the field from one of its founders."
-tags:        Quantum
+tags:        [Quantum]
 redirect_from:
  - /2024/06/11/deutsch-lectures.md
 ---

@@ -1,7 +1,7 @@
 ---
 title:       "Using `<details>` with GFM and kramdown/Jekyll"
 description: "The `details' tag is very useful, but GitHub Flavored Markdown and kramdown treat it slightly differently."
-tags:        Jekyll kramdown
+tags:        [Jekyll, kramdown]
 modified:    2024-01-25
 redirect_from:
   - /2024/01/07/details-with-kramdown.html

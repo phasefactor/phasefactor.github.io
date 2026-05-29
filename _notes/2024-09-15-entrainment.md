@@ -1,8 +1,7 @@
 ---
 title:       "Brainwave Entrainment"
 description: "Notes on methods and efficacy of brainwave entrainment."
-draft:       true
-tags:        Brain
+tags:        [Brain]
 redirect_from:
   - /2024/09/15/entrainment.html
 ---

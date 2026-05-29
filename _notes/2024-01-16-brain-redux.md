@@ -1,7 +1,7 @@
 ---
 title:       "Supplements for Cognitive Performance"
 description: "A list of supplements with evidence of useful cognitive benefits in the short-term."
-tags:        Brain Health
+tags:        [Brain, Health]
 redirect_from:
  - /2024/01/16/brain-redux.html
 ---

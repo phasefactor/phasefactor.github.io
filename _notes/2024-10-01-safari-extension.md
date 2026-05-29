@@ -1,8 +1,7 @@
 ---
 title:       "Safari Web Extension in SwiftUI"
 description: ""
-tags:        Xcode
-draft:       false
+tags:        [Xcode]
 redirect_from:
   - /2024/10/01/safari-extension.html
 ---
