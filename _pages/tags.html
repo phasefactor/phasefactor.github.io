@@ -14,8 +14,10 @@ permalink:   /tags.html
 {% assign tags = tags | uniq | sort_natural %}
 <!-- {{ tags }} -->
 {%- for tag in tags -%}
-  {%- assign published_posts = all_items[tag] | where: "draft", "false" -%}
-  {%- assign num_posts = published_posts | size -%}
+  {%- assign published_posts = all_items[tag] | where_exp: "item", "item.tags contains tag" -%}
+  {%- assign published_posts = published_posts | where: "draft", "false" -%}
+
+  {%- assign num_posts = published_posts.size -%}
   
   {%- if num_posts != 0 -%}
     <details data-tag="{{ tag }}">
