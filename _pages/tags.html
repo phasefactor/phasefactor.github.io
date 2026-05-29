@@ -1,18 +1,17 @@
 ---
 title: "Posts by Tag"
-permalink: "/tags.html"
 description: "Posts sorted by tags."
 ---
 {% assign all_items = site.posts | concat: site.notes %}
-
+<!-- {{ all_items }} -->
 {% assign tags = "" | split: "" %}
 
 {% for item in all_items %}
   {% assign tags = tags | concat: item.tags %}
 {% endfor %}
-
+<!-- {{ tags }} -->
 {% assign tags = tags | uniq | sort_natural %}
-
+<!-- {{ tags }} -->
 {%- for tag in tags -%}
   {%- assign published_posts = all_items[tag] | where: "draft", "false" -%}
   {%- assign num_posts = published_posts | size -%}
@@ -32,6 +31,14 @@ description: "Posts sorted by tags."
 {% endfor %}
 
 
-<style>summary::-webkit-details-marker {padding-bottom: 4px;}</style>
+<style>
+summary::-webkit-details-marker {
+  padding-bottom: 4px;
+}
+</style>
 
-<script>if (window.location.hash){document.querySelector("details[data-tag='"+decodeURIComponent(window.location.hash.substring(1))+"']").open=true;}</script>
+<script>
+if (window.location.hash) {
+  document.querySelector("details[data-tag='"+decodeURIComponent(window.location.hash.substring(1))+"']").open=true;
+}
+</script>

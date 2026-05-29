@@ -24,14 +24,14 @@
       <a href="/contact.html">Contact</a>
     </div>
   </details>
+
+  <script>
+    (function (){
+      let toggle = document.querySelector("#theme-toggle");
+
+      if (localStorage.theme) { toggle.checked = localStorage.theme === "dark";}
+    
+      toggle.addEventListener("change", () => { localStorage.theme = toggle.checked ? "dark" : "light"; });
+    }());
+  </script>
 </nav>
-
-<script>
-  (function (){
-    let toggle = document.querySelector("#theme-toggle");
-
-    if localStorage.theme { toggle.checked = localStorage.theme === "dark";}
-  
-    toggle.addEventListener("change", () => { localStorage.theme = toggle.checked ? "dark" : "light"; });
-  }());
-</script>
