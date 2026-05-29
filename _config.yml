@@ -21,7 +21,8 @@ kramdown:
 
 theme: null
 
-include: [_pages]
+include: 
+  - _pages
 
 exclude:
   - LICENSE
