@@ -1,7 +1,7 @@
 ---
 title:       "Notes on Brainwaves"
 description: "What types of brainwaves exist and what do they imply about cognitive function."
-tags:        Brain
+tags:        [Brain]
 modified:     2024-09-08
 redirect_from:
   - /2024/08/26/brainwaves.html

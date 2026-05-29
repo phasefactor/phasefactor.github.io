@@ -1,7 +1,7 @@
 ---
 title:       "Deploying Simple AdBlocker on MacOS/iOS"
 description: "How to deploy the SimpleBlock extension."
-tags:        Xcode Security
+tags:        [Xcode, Security]
 modified:    2026-05-14
 redirect_from:
   - /2024/01/17/safari-ad-block.html

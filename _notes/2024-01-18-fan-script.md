@@ -1,7 +1,7 @@
 ---
 title:       "GL.iNet Fan Monitoring Script"
 description: ""
-tags:        GL.iNet
+tags:        [GL.iNet]
 redirect_from:
  - /2024/01/18/fan-script.html
 ---

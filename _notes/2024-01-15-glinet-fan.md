@@ -1,7 +1,7 @@
 ---
 title:       "Setting GL.iNet Slate AX Fan Temperature"
 description: "Two ways to set a custom fan temperature."
-tags:        GL.iNet
+tags:        [GL.iNet]
 redirect_from:
  - /2024/01/15/glinet-fan.html
 ---

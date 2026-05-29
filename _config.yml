@@ -23,6 +23,10 @@ theme: null
 
 include: [_pages]
 
+exclude:
+  - LICENSE
+  - README.md
+
 sass:
   style: compressed
 
