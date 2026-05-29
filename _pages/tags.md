@@ -13,10 +13,8 @@ description: "Posts sorted by tags."
 
 {% assign tags = tags | uniq | sort_natural %}
 
-{%- assign sorted_tag_list = site_tags | split:',' | sort_natural -%}
-
-{%- for tag in sorted_tag_list -%}
-  {%- assign published_posts = site.tags[tag] | where: "draft", "false" -%}
+{%- for tag in tags -%}
+  {%- assign published_posts = all_items[tag] | where: "draft", "false" -%}
   {%- assign num_posts = published_posts | size -%}
   
   {%- if num_posts != 0 -%}
