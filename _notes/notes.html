@@ -1,11 +1,11 @@
 ---
-title:  "Notes to my Future Self"
-permalink: "/posts.html"
+title:  "Archive of Notes to My Future Self"
+permalink: "notes/notes.html"
 ---
 
-List of all posts in chronological order. 
+List of all posts in chronological order.  For a list by topic <a href="\notes\tags.html">check this page</a>.
 
-{% assign publishedPosts = site.posts | where: "draft": "false"  %}
+{% assign publishedPosts = site.notes | where: "draft": "false"  %}
 
 {% assign postsByYear = publishedPosts | group_by_exp:"post", "post.date | date: '%Y'" %}
   {% for year in postsByYear %}
