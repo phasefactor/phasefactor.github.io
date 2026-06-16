@@ -3,7 +3,11 @@ title:       "Posts by Tag"
 description: "Posts sorted by tags."
 permalink:   /tags.html
 ---
+{%- comment %}
 {% assign all_items = site.posts | concat: site.notes %}
+{% endcomment -%}
+
+{% assign all_items = site.notes %}
 
 {% assign tags = "" | split: "" %}
 
