@@ -48,13 +48,8 @@ defaults:
     values:
       layout:   "default"
       author:   "admin@phasefactor.dev"
-  -
-    scope:
-      path: _posts
-    values:
-      layout: post
-  -
+  - # Archive of the old "Notes to My Future Self" posts
     scope:
       path: _notes
     values:
-      layout: post
+      layout: archive
